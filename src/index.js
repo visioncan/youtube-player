@@ -53,7 +53,7 @@ export default (maybeElementId: YouTubePlayerType | HTMLElement | string, option
   options.events = YouTubePlayer.proxyEvents(emitter);
 
   const playerAPIReady = new Promise((resolve: (result: YouTubePlayerType) => void) => {
-    if (typeof maybeElementId === 'string' || maybeElementId instanceof HTMLElement) {
+    if (typeof maybeElementId === 'string' || maybeElementId instanceof Object) {
       // eslint-disable-next-line promise/catch-or-return
       youtubeIframeAPI
         .then((YT) => {
