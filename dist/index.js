@@ -62,7 +62,7 @@ exports.default = function (maybeElementId) {
   options.events = _YouTubePlayer2.default.proxyEvents(emitter);
 
   var playerAPIReady = new Promise(function (resolve) {
-    if (typeof maybeElementId === 'string' || maybeElementId instanceof Object) {
+    if (typeof maybeElementId === 'string' || (typeof maybeElementId === 'undefined' ? 'undefined' : _typeof(maybeElementId)) === 'object') {
       // eslint-disable-next-line promise/catch-or-return
       youtubeIframeAPI.then(function (YT) {
         var player = new YT.Player(maybeElementId, options);
